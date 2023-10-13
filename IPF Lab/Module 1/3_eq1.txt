@@ -1,0 +1,18 @@
+a = np.array([1, 2, 3, 4, 5, 6, 7])
+
+1. SPlit the array using array.split(a, 1)
+2. array_split(a,2)
+3. array_split(a,5)
+4. array_split(a,7)
+5. array_split(a,10)
+
+Write the observation in your record
+
+a = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+1. np.split(a, 1)
+2. np.split(a, 2)
+3. np.split(a, 4)
+4. np.split(a, 7)
+5. np.split(a, 19)
+
+Write the observation in your record
