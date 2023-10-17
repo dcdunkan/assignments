@@ -5,6 +5,7 @@ root = Tk()
 root.resizable(False, False)
 root.title("Student Portal: Register")
 
+
 class Entry(TkEntry):
     def __init__(self, master=None, placeholder="Placeholder", color="grey", **kwargs):
         super().__init__(master, **kwargs)
@@ -50,7 +51,6 @@ last_name_label = Label(details, text="Last Name")
 last_name_label.grid(row=1, column=0, padx=5, pady=3)
 last_name = Entry(details, placeholder="Enter Last Name", width=30)
 last_name.grid(row=1, column=1, padx=5, pady=3)
-
 
 
 root.mainloop()

@@ -8,19 +8,23 @@ Label(root, text="Address:").pack(pady=10)
 address = scrolledtext.ScrolledText(root, wrap=WORD, height=4, width=35)
 address.pack()
 
+
 def submit():
     messagebox.showinfo("Address", address.get("1.0", END))
+
 
 Button(root, text="Submit", command=submit).pack()
 
 progress = IntVar()
 progress_bar = Progressbar(root, mode="determinate", length=100, variable=progress)
 
+
 def update_progress():
     for i in range(0, 100):
         progress.set(i)
         root.update_idletasks()
         sleep(0.005)
+
 
 progress_bar.pack(pady=10)
 

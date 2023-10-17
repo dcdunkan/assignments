@@ -23,8 +23,10 @@ xscroll = Scrollbar(notepad, orient=HORIZONTAL)
 yscroll = Scrollbar(notepad, orient=VERTICAL)
 textbox = Text(notepad, width=80, height=20, wrap=NONE)
 
+
 def save_file():
     return textbox.get(0.0, END)
+
 
 xscroll.config(command=textbox.xview)
 yscroll.config(command=textbox.yview)
