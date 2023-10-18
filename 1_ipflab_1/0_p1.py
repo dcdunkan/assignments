@@ -1,4 +1,5 @@
-from tkinter import END, Tk, Text
+import os
+from tkinter import END, Tk, Text, filedialog
 from tkinter.constants import NS, EW, HORIZONTAL, VERTICAL, NONE, W
 from tkinter.ttk import Button, Frame, Scrollbar
 
@@ -24,7 +25,9 @@ yscroll = Scrollbar(notepad, orient=VERTICAL)
 textbox = Text(notepad, width=80, height=20, wrap=NONE)
 
 
-def save_file():
+def save_file_as():
+    filename = filedialog.asksaveasfilename(defaultextension=".txt",title="Save file as...")
+    
     return textbox.get(0.0, END)
 
 
