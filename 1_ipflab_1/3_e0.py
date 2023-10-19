@@ -6,6 +6,7 @@ import numpy as np
 # its datatype and its dimension.
 matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 print(matrix)
+print(np.size(matrix))
 print(matrix.dtype)
 print(matrix.ndim)
 
