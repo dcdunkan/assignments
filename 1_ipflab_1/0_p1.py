@@ -4,6 +4,8 @@ from tkinter.constants import NS, EW, HORIZONTAL, VERTICAL, NONE, W
 from tkinter.ttk import Button, Frame, Scrollbar
 
 root = Tk()
+root.title("Not-pad")
+
 
 toolbar = Frame(root)
 toolbar.pack(anchor=W)
@@ -26,8 +28,10 @@ textbox = Text(notepad, width=80, height=20, wrap=NONE)
 
 
 def save_file_as():
-    filename = filedialog.asksaveasfilename(defaultextension=".txt",title="Save file as...")
-    
+    filename = filedialog.asksaveasfilename(
+        defaultextension=".txt", title="Save file as..."
+    )
+
     return textbox.get(0.0, END)
 
 

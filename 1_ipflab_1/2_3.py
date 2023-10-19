@@ -17,10 +17,12 @@ Entry(root, textvariable=branch).pack()
 Label(root, text="Year:").pack()
 Entry(root, textvariable=year).pack()
 
+
 def show_details():
     text = name.get() + " " + branch.get() + " " + year.get()
     messagebox.showinfo("Submitted Successfully!", text)
-    
+
+
 Button(root, text="Submit", command=show_details).pack()
 
 root.mainloop()
