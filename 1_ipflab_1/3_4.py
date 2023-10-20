@@ -21,6 +21,6 @@ print("Randomly generated 2-d array:", random_2d_arr)
 random.shuffle(random_2d_arr)
 print("Shuffled", random_2d_arr)
 
-random_row = random.randint(random_2d_arr.shape[0])
-random_col = random.randint(random_2d_arr.shape[1])
+random_row = random.choice(random_2d_arr.shape[0])
+random_col = random.choice(random_2d_arr.shape[1])
 print("Choice:", random_2d_arr[random_row][random_col])
