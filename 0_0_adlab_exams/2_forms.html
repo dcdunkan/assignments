@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question 3: Forms</title>
+</head>
+<body>
+  <h1>Book Recommendations</h1>
+  <p>Let us know your preferences and we'll send you book recommendations through your e-mail!</p>
+  <form method="POST" action="/">
+    <label for="name"><b>Name</b></label>
+    <input type="text" id="name" name="name" placeholder="Name" required/>
+    <label for="age"><b>Age</b></label>
+    <input type="number" id="age" name="age" size="5" value="0" required/>
+
+    <br /><br />
+
+    <label for="email"><b>E-mail</b></label>
+    <input type="email" id="email" name="email" placeholder="someone@example.com" size="30" required />
+
+    <br /><br />
+
+    <label for="genre"><b>Which genre of books do you like the most?</b></label><br/>
+    <select id="genre" required name="genre">
+        <option selected disabled>Select one</option>
+        <option>Fiction</option>
+        <option>Non-Fiction</option>
+        <option>Mystery</option>
+        <option>Science Fiction</option>
+    </select>
+
+    <br/><br/>
+
+    <label><b>How often do you read books?</b></label><br/>
+    <input type="radio" id="daily" name="frequency" required/>
+    <label for="daily">Daily</label>
+    <input type="radio" id="weekly" name="frequency"/>
+    <label for="weekly">Weekly</label>
+    <input type="radio" id="monthly" name="frequency"/>
+    <label for="monthly">Monthly</label>
+    <input type="radio" id="sometime" name="frequency"/>
+    <label for="sometime">Not very often</label>
+
+    <br/><br/>
+
+    <label><b>Select preferred format(s)</b></label><br/>
+    <input type="checkbox" id="paperback" name="format" required/>
+    <label for="paperback">Paperback</label>
+    <input type="checkbox" id="hardcover" name="format"/>
+    <label for="hardcover">Hardcover</label>
+    <input type="checkbox" id="e-book" name="format"/>
+    <label for="e-book">e-book</label>
+
+    <br/><br/>
+
+    <label for="comments"><b>Leave us a comment or tell us your preferences</b></label><br/>
+    <textarea rows="6" cols="50" id="comments" name="comments"></textarea><br /><br />
+
+    <input type="reset" value="Cancel" />
+    <input type="submit" value="Submit and send" />
+  </form>
+</boy>
+</html>
