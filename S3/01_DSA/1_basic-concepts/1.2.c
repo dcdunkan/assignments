@@ -49,7 +49,6 @@ void print_polynomial(Term *poly, int terms) {
 
 void add_polynomials(Term *result, int result_terms, Term *p1, int terms1,
                      Term *p2, int terms2) {
-
     for (int i = 0; i < result_terms; i++) {
         Term term = {0, i};
         if (i < terms1 + 1) {
@@ -59,6 +58,12 @@ void add_polynomials(Term *result, int result_terms, Term *p1, int terms1,
             term.coefficient += p2[i].coefficient;
         }
         result[i] = term;
+    }
+}
+
+void add_polynomialsx(Term *result, int result_terms, Term *p1, int terms1,
+                      Term *p2, int terms2) {
+    for (int i = 0; i < result_terms; i++) {
     }
 }
 
@@ -134,8 +139,10 @@ int main() {
     print_polynomial(poly2, terms2);
 
     // ====== ADDITION =========
-    // printf("Result of addition:\n");
-    //
+    printf("Result of addition:\n");
+
+    int addition_result_terms = 0;
+
     // int add_result_degree = terms1 > terms2 ? terms1 : terms2;
     // struct PolyTerm add_result[add_result_degree];
 
@@ -159,6 +166,7 @@ int main() {
         printf("after resolution:\n");
         resolve_expression(mul_result, &multiply_result_terms);
         sort_poly_terms(mul_result, multiply_result_terms);
+        print_polynomial(mul_result, multiply_result_terms);
     } else {
         print_polynomial(mul_result, multiply_result_terms);
     }

@@ -5,18 +5,32 @@
 
 // a_prev and b_prev is expected to be the immediately previous nodes
 // of a and b, the nodes to be swapped.
-void swap_nodes(struct Node *a_prev, struct Node *b_prev) {
+void swap_nodes(struct Node *start, struct Node *a_prev, struct Node *b_prev) {
     struct Node *a = a_prev->next, *a_next = a->next, *b = b_prev->next,
                 *b_next = b->next;
-    printf("\n%d %d\n", a->data, b->data);
-    // a_prev->next = b;
-    // b_prev->next = a;
-    // a->next = b_next;
-    // b->next = a_next;
+    if (a == NULL || b == NULL)
+        return;
+
+    if (a_prev != NULL)
+        a_prev->next = b;
+    else
+        *start = *b;
+
+    if (b_prev != NULL)
+        b_prev->next = a;
+    else
+        *start = *a;
+
+    struct Node *temp = b->next;
+    b->next = a->next;
+    a->next = temp;
 }
 
 void swap_nodes_at_position(struct Node *start, int x, int y) {
-    swap_nodes(get_node_at_position(start, x), get_node_at_position(start, y));
+    if (x == y)
+        return;
+    swap_nodes(start, get_node_at_position(start, x),
+               get_node_at_position(start, y));
 }
 
 int main() {
@@ -46,7 +60,14 @@ int main() {
         }
 
         case 2: {
-            swap_nodes_at_position(HEAD, 0, 1);
+            int x, y;
+            printf("Enter two indices to be swapped: ");
+            scanf("%d %d", &x, &y);
+            int length = get_length(HEAD);
+            if (x >= 0 && x < length && y >= 0 && y < length)
+                swap_nodes_at_position(HEAD, x, y);
+            else
+                printf("error: Invalid indices specified.\n");
             break;
         }
 

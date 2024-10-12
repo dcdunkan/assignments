@@ -1,3 +1,5 @@
+// Attempt to make a generic linked list.
+// TO BE CONTINUED (indev)
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -22,10 +24,10 @@ void free_nodes(struct Node *start) {
     }
 }
 
-void display_list(struct Node *start) {
+void display_list(struct Node *start, void (*fun)(void *)) {
     struct Node *temp = start;
     while (temp != NULL) {
-        printf("%d ", temp->data);
+        printf("%d ", *(int *)(temp->data));
         temp = temp->next;
     }
     printf("\n");
