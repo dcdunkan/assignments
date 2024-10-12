@@ -1,0 +1,213 @@
+~/code/dsa > gcc 1.01_bubble_sort.c && ./a.out                                                                                                          dunks@debbie 11:41:25
+Enter the number of elements: 5
+Enter 5 integers: 1 55 33 2 6
+[1 55 33 2 6]
+Bubbling...
+[1 2 6 33 55]
+~/code/dsa > gcc 1.02_polynomial_struct.c && ./a.out                                                                                                 7s dunks@debbie 11:41:41
+Enter the degree of the first polynomial: 3
+Enter the coefficient of x^3: 1
+Enter the coefficient of x^2: 2
+Enter the coefficient of x^1: 3
+Enter the coefficient of x^0: 4
++ 1x^3+ 2x^2+ 3x^1+ 4x^0
+Enter the degree of the second polynomial: 2
+Enter the coefficient of x^2: 1
+Enter the coefficient of x^1: 2
+Enter the coefficient of x^0: 3
++ 1x^2+ 2x^1+ 3x^0
+Result of the addition:
++ 1x^3+ 3x^2+ 5x^1+ 7x^0
+Result of the multiplication:
++ 1x^5+ 4x^4+ 10x^3+ 16x^2+ 17x^1+ 12x^0
+~/code/dsa > gcc 1.03_linear_search_comp.c && ./a.out                                                                                               12s dunks@debbie 11:42:07
+Enter the number of elements: 6
+Enter 6 integers to begin the search with: 5 3 1 7 8 4 
+Enter the number to search for in the array: 1
+
+Found the search element at index 2.
+Compared 3 times.
+~/code/dsa > gcc 1.03_linear_search_comp.c && ./a.out                                                                                            4m 30s dunks@debbie 11:46:45
+Enter the number of elements: 5
+Enter 5 integers to begin the search with: 1 2 3 4 5
+Enter the number to search for in the array: 8
+
+Couldn't find the element in array.
+Compared 5 times.
+~/code/dsa > gcc 1.04_binary_search.c && ./a.out                                                                                                     8s dunks@debbie 11:46:55
+Enter the number of elements: 7
+Enter 7 integers to begin the search with: 6 3 5 77 21 1 3
+Integer to be searched for: 77
+using recursive search:
+found the integer. number of comparisons made: 1
+using iterative search:
+found the integer. number of comparisons made: 1
+~/code/dsa > gcc 1.04_binary_search.c && ./a.out                                                                                                    25s dunks@debbie 11:47:31
+Enter the number of elements: 3
+Enter 3 integers to begin the search with: 1 45 6
+Integer to be searched for: 5
+using recursive search:
+couldn't find the element. number of comparisons made: 2
+using iterative search:
+couldn't find the element. number of comparisons made: 1
+~/code/dsa > gcc 1.05_stack.c && ./a.out                                                                                                            11s dunks@debbie 11:47:49
+enter the size of the stack: 4
+choose an operation
+[1: push, 2: pop, 3: quit]: 1
+enter the element to push: 5
+ 5
+choose an operation
+[1: push, 2: pop, 3: quit]: 1
+enter the element to push: 7
+ 5 7
+choose an operation
+[1: push, 2: pop, 3: quit]: 1
+enter the element to push: 3
+ 5 7 3
+choose an operation
+[1: push, 2: pop, 3: quit]: 1
+enter the element to push: 8
+ 5 7 3 8
+choose an operation
+[1: push, 2: pop, 3: quit]: 1
+enter the element to push: 9
+error: stack overflow
+ 5 7 3 8
+choose an operation
+[1: push, 2: pop, 3: quit]: 2
+ 5 7 3
+choose an operation
+[1: push, 2: pop, 3: quit]: 2
+ 5 7
+choose an operation
+[1: push, 2: pop, 3: quit]: 2
+ 5
+choose an operation
+[1: push, 2: pop, 3: quit]: 2
+ (empty)
+choose an operation
+[1: push, 2: pop, 3: quit]: 2
+error: stack underflow
+ (empty)
+choose an operation
+[1: push, 2: pop, 3: quit]: 3
+~/code/dsa > gcc 1.06_string_reversal.c && ./a.out                                                                                               1m 59s dunks@debbie 11:50:09
+Enter string to be reversed (100 chars max): abcd
+Reversed string: dcba
+~/code/dsa > gcc 1.07_balanced_paranthesis.c && ./a.out                                                                                              5s dunks@debbie 11:50:26
+Enter string to be checked (100 chars max): (())
+balanced.
+~/code/dsa > gcc 1.07_balanced_paranthesis.c && ./a.out                                                                                              9s dunks@debbie 11:50:48
+Enter string to be checked (100 chars max): (()())
+balanced.
+~/code/dsa > gcc 1.07_balanced_paranthesis.c && ./a.out                                                                                              3s dunks@debbie 11:50:54
+Enter string to be checked (100 chars max): (())()
+balanced.
+~/code/dsa > gcc 1.07_balanced_paranthesis.c && ./a.out                                                                                              6s dunks@debbie 11:51:01
+Enter string to be checked (100 chars max): ()(()
+not balanced.
+~/code/dsa > gcc 1.07_balanced_paranthesis.c && ./a.out                                                                                              5s dunks@debbie 11:51:07
+Enter string to be checked (100 chars max): ((())
+error: stack overflow
+not balanced.
+~/code/dsa > gcc 1.08_queue.c && ./a.out                                                                                                             4s dunks@debbie 11:51:12
+enter the size of the queue: 5 
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 1
+ 1
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 5
+ 1 5
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 7
+ 1 5 7
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 4
+ 1 5 7 4
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 9
+ 1 5 7 4 9
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 3
+Queue is full!
+ 1 5 7 4 9
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 2
+dequeued 1
+ 5 7 4 9
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 2
+dequeued 5
+ 7 4 9
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 2
+dequeued 7
+ 4 9
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 2
+dequeued 4
+ 9
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 2
+dequeued 9
+ (empty)
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 2
+Nothing left to be dequeued
+dequeued 9
+ (empty)
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 3
+~/code/dsa > gcc 1.09_circular_queue.c && ./a.out                                                                                                 1m 1s dunks@debbie 11:52:24
+enter the size of the queue: 4
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 4
+ 4
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 2
+dequeued 4
+ (empty)
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 2
+Nothing left to be dequeued
+dequeued 4
+ (empty)
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 5
+ 5
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 6
+ 5 6
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 8
+ 5 6 8
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 2
+ 5 6 8 2
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 2
+Queue is full!
+ 5 6 8 2
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 2
+dequeued 5
+ 6 8 2
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 1
+enter the item to enqueue: 8
+ 6 8 2 8
+choose an operation
+[1: enqueue, 2: dequeue, 3: quit]: 3
+~/code/dsa >        
