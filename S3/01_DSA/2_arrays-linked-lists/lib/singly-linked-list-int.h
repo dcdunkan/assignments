@@ -1,18 +1,18 @@
-struct Node {
+struct node {
     int data;
-    struct Node *next;
+    struct node *next;
 };
 
-struct Node *create_node();
-void input_node_data(struct Node *ptr);
-void free_nodes(struct Node *start);
+struct node *create_node();
+void input_node_data(struct node *ptr);
+void free_nodes(struct node *start);
 
-void display_list(struct Node *start);
-int get_length(struct Node *start);
-struct Node *get_node_at_position(struct Node *start, int position);
+void display_list(struct node *start);
+int get_length(struct node *start);
+struct node *get_node_at_position(struct node *start, int position);
 
-void insert_node(struct Node *start, int position, struct Node *node);
-void delete_node(struct Node *start, int position);
+void insert_node(struct node *start, int position, struct node *node);
+void delete_node(struct node *start, int position);
 
-void reverse_list(struct Node **start);
-void reverse_by_chunks(struct Node **start, int chunk_size);
+void reverse_list(struct node **start);
+void reverse_by_chunks(struct node **start, int chunk_size);

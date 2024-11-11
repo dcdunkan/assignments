@@ -3,20 +3,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node *create_node() {
-    struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+struct node *create_node() {
+    struct node *ptr = (struct node *)malloc(sizeof(struct node));
     if (ptr == NULL)
         printf("ERROR: failed to allocate memory for a node.\n");
     return ptr;
 }
 
-void input_node_data(struct Node *ptr) {
+void input_node_data(struct node *ptr) {
     printf("Enter an integer for the data part: ");
     scanf("%d", &(ptr->data));
 }
 
-void free_nodes(struct Node *start) {
-    struct Node *temp;
+void free_nodes(struct node *start) {
+    struct node *temp;
     while (start != NULL) {
         temp = start;
         start = start->next;
@@ -24,8 +24,8 @@ void free_nodes(struct Node *start) {
     }
 }
 
-void display_list(struct Node *start) {
-    struct Node *temp = start;
+void display_list(struct node *start) {
+    struct node *temp = start;
     while (temp != NULL) {
         printf("%d ", temp->data);
         temp = temp->next;
@@ -33,9 +33,9 @@ void display_list(struct Node *start) {
     printf("\n");
 }
 
-int get_length(struct Node *start) {
+int get_length(struct node *start) {
     int length = 0;
-    struct Node *temp = start;
+    struct node *temp = start;
     while (temp != NULL) {
         temp = temp->next;
         length++;
@@ -43,8 +43,8 @@ int get_length(struct Node *start) {
     return length;
 }
 
-struct Node *get_node_at_position(struct Node *start, int position) {
-    struct Node *temp = start;
+struct node *get_node_at_position(struct node *start, int position) {
+    struct node *temp = start;
     int length = get_length(start);
     int limit = position < 0 ? get_length(start) + position : position;
     if (limit < 0 || limit > length) {
@@ -61,22 +61,22 @@ struct Node *get_node_at_position(struct Node *start, int position) {
     return temp;
 }
 
-void insert_node(struct Node *start, int position, struct Node *node) {
-    struct Node *temp = get_node_at_position(start, position);
+void insert_node(struct node *start, int position, struct node *node) {
+    struct node *temp = get_node_at_position(start, position);
     if (temp == NULL)
         return;
-    struct Node *after = temp->next;
+    struct node *after = temp->next;
     temp->next = node;
     if (after != NULL) {
         node->next = after;
     }
 }
 
-void delete_node(struct Node *start, int position) {
-    struct Node *temp = get_node_at_position(start, position);
+void delete_node(struct node *start, int position) {
+    struct node *temp = get_node_at_position(start, position);
     if (temp == NULL)
         return;
-    struct Node *to_delete = temp->next, *after = to_delete->next;
+    struct node *to_delete = temp->next, *after = to_delete->next;
     temp->next = to_delete->next;
     free(to_delete);
 }
@@ -85,11 +85,11 @@ void delete_node(struct Node *start, int position) {
 // that points to the first item.
 // NOTE: This can also be done by just splitting by chunks with
 // chunk size as the length of the list.
-void reverse_list(struct Node **start) {
+void reverse_list(struct node **start) {
     // No elements or only one element => already reversed!
     if (*start == NULL || (*start)->next == NULL)
         return;
-    struct Node *prev = NULL, *current = *start, *next = NULL;
+    struct node *prev = NULL, *current = *start, *next = NULL;
     while (current != NULL) {
         next = current->next;
         current->next = prev;
@@ -100,14 +100,14 @@ void reverse_list(struct Node **start) {
 }
 
 /* Guide: Geeks For Geeks */
-void reverse_by_chunks(struct Node **start, int chunk_size) {
+void reverse_by_chunks(struct node **start, int chunk_size) {
     // `new_head` references the kth node of the group (or the last node if
     // there is no kth node), a.k.a, the new head of the reversed group.
-    struct Node *current = *start, *new_head = NULL, *prev_group_tail = NULL;
+    struct node *current = *start, *new_head = NULL, *prev_group_tail = NULL;
 
     while (current != NULL) {
-        struct Node *group_head = current;
-        struct Node *prev = NULL, *next = NULL;
+        struct node *group_head = current;
+        struct node *prev = NULL, *next = NULL;
         int count = 0; //  Keep track how many nodes we have passed.
 
         while (current != NULL && count < chunk_size) {

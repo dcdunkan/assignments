@@ -5,8 +5,8 @@
 
 // a_prev and b_prev is expected to be the immediately previous nodes
 // of a and b, the nodes to be swapped.
-void swap_nodes(struct Node *start, struct Node *a_prev, struct Node *b_prev) {
-    struct Node *a = a_prev->next, *a_next = a->next, *b = b_prev->next,
+void swap_nodes(struct node *start, struct Node *a_prev, struct Node *b_prev) {
+    struct node *a = a_prev->next, *a_next = a->next, *b = b_prev->next,
                 *b_next = b->next;
     if (a == NULL || b == NULL)
         return;
@@ -21,12 +21,12 @@ void swap_nodes(struct Node *start, struct Node *a_prev, struct Node *b_prev) {
     else
         *start = *a;
 
-    struct Node *temp = b->next;
+    struct node *temp = b->next;
     b->next = a->next;
     a->next = temp;
 }
 
-void swap_nodes_at_position(struct Node *start, int x, int y) {
+void swap_nodes_at_position(struct node *start, int x, int y) {
     if (x == y)
         return;
     swap_nodes(start, get_node_at_position(start, x),
@@ -34,7 +34,7 @@ void swap_nodes_at_position(struct Node *start, int x, int y) {
 }
 
 int main() {
-    struct Node *HEAD = create_node();
+    struct node *HEAD = create_node();
     HEAD->next = NULL;
 
     int choice;
@@ -52,7 +52,7 @@ int main() {
 
         switch (choice) {
         case 1: {
-            struct Node *new_node = create_node();
+            struct node *new_node = create_node();
             new_node->next = NULL;     // set it as the end.
             input_node_data(new_node); // populate the data
             insert_node(HEAD, -1, new_node);

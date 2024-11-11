@@ -3,14 +3,14 @@
 #include <stdio.h>
 
 /* Guide: Geeks For Geeks */
-void reverse_by_chunks(struct Node **start, int chunk_size) {
+void reverse_by_chunks(struct node **start, int chunk_size) {
     // `new_head` references the kth node of the group (or the last node if
     // there is no kth node), a.k.a, the new head of the reversed group.
-    struct Node *current = *start, *new_head = NULL, *prev_group_tail = NULL;
+    struct node *current = *start, *new_head = NULL, *prev_group_tail = NULL;
 
     while (current != NULL) {
-        struct Node *group_head = current;
-        struct Node *prev = NULL, *next = NULL;
+        struct node *group_head = current;
+        struct node *prev = NULL, *next = NULL;
         int count = 0; //  Keep track how many nodes we have passed.
 
         while (current != NULL && count < chunk_size) {
@@ -44,7 +44,7 @@ void reverse_by_chunks(struct Node **start, int chunk_size) {
 }
 
 int main() {
-    struct Node *HEAD = create_node();
+    struct node *HEAD = create_node();
     HEAD->next = NULL;
 
     int choice;
@@ -62,7 +62,7 @@ int main() {
 
         switch (choice) {
         case 1: {
-            struct Node *new_node = create_node();
+            struct node *new_node = create_node();
             new_node->next = NULL;     // set it as the end.
             input_node_data(new_node); // populate the data
             insert_node(HEAD, -1, new_node);

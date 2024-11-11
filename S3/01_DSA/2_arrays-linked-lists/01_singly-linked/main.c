@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 int main() {
-    struct Node *HEAD = create_node();
+    struct node *HEAD = create_node();
     HEAD->next = NULL;
 
     int choice;
@@ -22,7 +22,7 @@ int main() {
 
         switch (choice) {
         case 1: {
-            struct Node *new_node = create_node();
+            struct node *new_node = create_node();
             new_node->next = NULL;     // set it as the end.
             input_node_data(new_node); // populate the data
 
